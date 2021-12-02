@@ -47,12 +47,17 @@ p {
   margin: 0 8px;
 }
 
-.toolbar #youtube-logo {
-  height: 40px;
-  margin: 0 16px;
+.toolbar #instagram-logo.ig-logo {
+    fill: #333;
+}
+.toolbar #instagram-logo.path {
+    fill: #000;
+}
+.toolbar #instagram-logo.circle {
+    fill: #fff;
 }
 
 .toolbar #twitter-logo:hover,
-.toolbar #youtube-logo:hover {
+.toolbar #instagram-logo:hover {
   opacity: 0.8;
 }

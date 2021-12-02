@@ -33,7 +33,6 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatSortModule,
     HttpClientModule,
-    ActivatedRoute,
     RouterModule.forRoot(routes)
   ],
   providers: [PlayerService],
