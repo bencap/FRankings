@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // eslint-disable-next-line max-len
-const mongoUri = `mongodb://${process.env.accountName}:${process.env.mongoKey}@${process.env.accountName}.documents.azure.com:${process.env.port}/${process.env.databaseName}?ssl=true`;
+const mongoUri = `mongodb://${process.env.accountName}:${process.env.mongoKey}@${process.env.accountName}.documents.azure.com:${process.env.mongoPort}/${process.env.databaseName}?ssl=true`;
 
 function connect() {
 mongoose.set('debug', true);

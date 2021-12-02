@@ -9,7 +9,9 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(root, 'Angular/dist/FRatings-Angular')));
+app.use(express.static(path.join(root, '/Angular/dist/FRatings-Angular')));
+console.log(path.join(root, '/Angular/dist/FRatings-Angular'));
+console.log(root);
 app.use('/api', routes);
 
 app.listen(port, () => console.log(`API running on localhost:${port}`));

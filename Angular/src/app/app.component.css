@@ -44,6 +44,11 @@ p {
 
 .toolbar #twitter-logo {
   height: 40px;
+  margin: 0 0px;
+}
+
+.toolbar #instagram-logo {
+  height: 30px;
   margin: 0 8px;
 }
 
