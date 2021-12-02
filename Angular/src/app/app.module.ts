@@ -11,6 +11,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { AppComponent } from './app.component';
 import { PlayersComponent } from './players/players.component';
 import { HomeComponent } from './home/home.component';
+import { PlayerService } from './players.service';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -35,7 +36,7 @@ const routes: Routes = [
     ActivatedRoute,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
