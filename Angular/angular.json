@@ -41,8 +41,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "3kb",
+                  "maximumError": "5kb"
                 }
               ],
               "fileReplacements": [
@@ -71,7 +71,8 @@
               "browserTarget": "FRatingsg-Angular:build:production"
             },
             "development": {
-              "browserTarget": "FRatingsg-Angular:build:development"
+              "browserTarget": "FRatingsg-Angular:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

@@ -9,9 +9,13 @@
 
 # dependencies
 /node_modules
+/Angular/node_modules
 
 # profiling files
 chrome-profiler-events*.json
+
+# python local updaters
+db_updates
 
 # IDEs and editors
 /.idea
@@ -31,6 +35,7 @@ chrome-profiler-events*.json
 .history/*
 
 # misc
+/Angular/.angular
 /.angular/cache
 /.sass-cache
 /connect.lock
@@ -40,6 +45,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+environment.js
 
 # System Files
 .DS_Store

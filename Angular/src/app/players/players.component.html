@@ -1,0 +1,269 @@
+<div class="content" role ="main">
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+      <div class="card-container">
+        <a class="card" rel="noopener" [routerLink]="['/players', 'QB']" (click)="getPlayers('QB')">
+          <img class="icon" type="image/x-icon" src="assets/qb-stock.jpeg">
+          <span>Quarterbacks</span>
+          <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+        </a>
+        <a class="card" rel="noopener" [routerLink]="['/players', 'RB']" (click)="getPlayers('RB')">
+          <img class="icon" type="image/x-icon" src="assets/rb-stock.png" >
+          <span>Running Backs</span>
+          <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+        </a>
+        <a class="card" rel="noopener" [routerLink]="['/players', 'WR']" (click)="getPlayers('WR')">
+          <img class="icon" type="image/x-icon" src="assets/wr-stock.png">
+          <span>Wide Recievers</span>
+          <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+        </a>
+        <a class="card" rel="noopener" [routerLink]="['/players', 'TE']" (click)="getPlayers('TE')">
+          <img class="icon" type="image/x-icon" src="assets/te-stock.jpeg" >
+          <span>Tight Ends</span>
+          <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+        </a>
+        <a class="card" rel="noopener" [routerLink]="['/players', 'DEF']" (click)="getPlayers('DEF')">
+          <img class="icon" type="image/x-icon" src="assets/def-stock.jpeg" >          <span>Team Defenses</span>
+          <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+        </a>
+        <a class="card" rel="noopener" [routerLink]="['/players', 'ALL']" (click)="getPlayers('ALL')">
+          <img class="icon" type="image/x-icon" src="assets/all-stock.png" >
+          <span>All Players</span>
+          <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
+        </a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <table mat-table [dataSource]="dataSource" matSort matSortStart="desc" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name</th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Position </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+          
+            <!-- Avg. Points Column -->
+            <ng-container matColumnDef="avgPts">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Average Fantasy Points </th>
+              <td mat-cell *matCellDef="let element"> {{element.avgPts}} </td>
+            </ng-container>
+          
+            <!-- Fantasy Grade Column -->
+            <ng-container matColumnDef="fGrade">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Fantasy Grade </th>
+              <td mat-cell *matCellDef="let element"> {{element.fGrade}} </td>
+            </ng-container>
+
+            <!-- Overall Grade Column -->
+            <ng-container matColumnDef="oGrade">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Overall Grade </th>
+              <td mat-cell *matCellDef="let element"> {{element.oGrade}} </td>
+            </ng-container>
+
+            <!-- Big Play Ability Column -->
+            <ng-container matColumnDef="bigPlay">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Big Play Ability </th>
+              <td mat-cell *matCellDef="let element"> {{element.bigPlay}} </td>
+            </ng-container>
+
+            <!-- Pass TD Column -->
+            <ng-container matColumnDef="passTDs">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Pass Touchdowns </th>
+              <td mat-cell *matCellDef="let element"> {{element.passTDs}} </td>
+            </ng-container>
+
+            <!-- Rush TD Column -->
+            <ng-container matColumnDef="rushTDs">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Rush Touchdowns </th>
+              <td mat-cell *matCellDef="let element"> {{element.rushTDs}} </td>
+            </ng-container>
+
+            <!-- Pass Yards Column -->
+            <ng-container matColumnDef="passYDs">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Passing Yards </th>
+              <td mat-cell *matCellDef="let element"> {{element.passYDs}} </td>
+            </ng-container>
+
+            <!-- Rush Yards Column -->
+            <ng-container matColumnDef="rushYDs">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Rushing Yards </th>
+              <td mat-cell *matCellDef="let element"> {{element.rushYDs}} </td>
+            </ng-container>
+
+            <!-- Interceptions Column -->
+            <ng-container matColumnDef="interceptions">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Interceptions </th>
+              <td mat-cell *matCellDef="let element"> {{element.interceptions}} </td>
+            </ng-container>
+
+            <!-- Fumbles Column -->
+            <ng-container matColumnDef="fumbles">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Fumbles </th>
+              <td mat-cell *matCellDef="let element"> {{element.fumbles}} </td>
+            </ng-container>
+
+            <!-- Athleticism Column -->
+            <ng-container matColumnDef="athleticism">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Athleticism </th>
+              <td mat-cell *matCellDef="let element"> {{element.athleticism}} </td>
+            </ng-container>
+
+            <!-- Agility Column -->
+            <ng-container matColumnDef="agility">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Agility </th>
+              <td mat-cell *matCellDef="let element"> {{element.agility}} </td>
+            </ng-container>
+          
+            <!-- Strength Column -->
+            <ng-container matColumnDef="strength">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Strength </th>
+              <td mat-cell *matCellDef="let element"> {{element.strength}} </td>
+            </ng-container>
+          
+            <!-- Speed Column -->
+            <ng-container matColumnDef="speed">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Speed </th>
+              <td mat-cell *matCellDef="let element"> {{element.speed}} </td>
+            </ng-container>
+
+            <!-- Productivity Column -->
+            <ng-container matColumnDef="productivity">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Productivity </th>
+              <td mat-cell *matCellDef="let element"> {{element.productivity}} </td>
+            </ng-container>
+
+            <!-- Arm Strength Column -->
+            <ng-container matColumnDef="armStrength">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Arm Strength </th>
+              <td mat-cell *matCellDef="let element"> {{element.armStrength}} </td>
+            </ng-container>
+
+            <!-- Accuracy Column -->
+            <ng-container matColumnDef="accuracy">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Accuracy </th>
+              <td mat-cell *matCellDef="let element"> {{element.accuracy}} </td>
+            </ng-container>
+
+            <!-- Decision Making Column -->
+            <ng-container matColumnDef="decisionMaking">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Decision Making </th>
+              <td mat-cell *matCellDef="let element"> {{element.decisionMaking}} </td>
+            </ng-container>
+
+            <!-- Dual Threat Column -->
+            <ng-container matColumnDef="dualThreat">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Dual Threat </th>
+              <td mat-cell *matCellDef="let element"> {{element.dualThreat}} </td>
+            </ng-container>
+
+            <!-- Team Column -->
+            <ng-container matColumnDef="team">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Team </th>
+              <td mat-cell *matCellDef="let element"> {{element.team}} </td>
+            </ng-container>
+
+            <!-- Total Touchdowns Column -->
+            <ng-container matColumnDef="totalTDs">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Touchdowns </th>
+              <td mat-cell *matCellDef="let element"> {{element.totalTDs}} </td>
+            </ng-container>
+
+            <!-- Total Yards Column -->
+            <ng-container matColumnDef="totalYDs">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Yards </th>
+              <td mat-cell *matCellDef="let element"> {{element.totalYDs}} </td>
+            </ng-container>
+
+            <!-- Carries Column -->
+            <ng-container matColumnDef="carries">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Carries </th>
+              <td mat-cell *matCellDef="let element"> {{element.carries}} </td>
+            </ng-container>
+
+            <!-- Receptions Column -->
+            <ng-container matColumnDef="receptions">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Receptions </th>
+              <td mat-cell *matCellDef="let element"> {{element.receptions}} </td>
+            </ng-container>
+
+            <!-- Vision Column -->
+            <ng-container matColumnDef="vision">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Vision </th>
+              <td mat-cell *matCellDef="let element"> {{element.vision}} </td>
+            </ng-container>
+
+            <!-- Break Tackle Column -->
+            <ng-container matColumnDef="breakTackle">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Break Tackle </th>
+              <td mat-cell *matCellDef="let element"> {{element.breakTackle}} </td>
+            </ng-container>
+
+            <!-- Ball Security Column -->
+            <ng-container matColumnDef="ballSecurity">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Ball Security </th>
+              <td mat-cell *matCellDef="let element"> {{element.ballSecurity}} </td>
+            </ng-container>
+
+            <!-- Catching Column -->
+            <ng-container matColumnDef="catching">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Catching </th>
+              <td mat-cell *matCellDef="let element"> {{element.catching}} </td>
+            </ng-container>
+
+            <!-- Route Running Column -->
+            <ng-container matColumnDef="routeRunning">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Route Running </th>
+              <td mat-cell *matCellDef="let element"> {{element.routeRunning}} </td>
+            </ng-container>
+
+            <!-- Run After Catch Column -->
+            <ng-container matColumnDef="runAfterCatch">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Run After Catch </th>
+              <td mat-cell *matCellDef="let element"> {{element.runAfterCatch}} </td>
+            </ng-container>
+
+            <!-- Deep Threat Column -->
+            <ng-container matColumnDef="deepThreat">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Deep Threat </th>
+              <td mat-cell *matCellDef="let element"> {{element.deepThreat}} </td>
+            </ng-container>
+
+            <!-- Forced Turnovers Column -->
+            <ng-container matColumnDef="fto">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Forced Turnovers </th>
+              <td mat-cell *matCellDef="let element"> {{element.fto}} </td>
+            </ng-container>
+
+            <!-- PPG Allowed Column -->
+            <ng-container matColumnDef="pointsAllowedGame">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Points Allowed per Game </th>
+              <td mat-cell *matCellDef="let element"> {{element.pointsAllowedGame}} </td>
+            </ng-container>
+
+            <!-- YPG Allowed Column -->
+            <ng-container matColumnDef="yardsAllowedGame">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Yards Allowed per Game </th>
+              <td mat-cell *matCellDef="let element"> {{element.yardsAllowedGame}} </td>
+            </ng-container>
+
+            <!-- Special Teams TDs Column -->
+            <ng-container matColumnDef="specialTeamsTDs">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Special Teams TDs </th>
+              <td mat-cell *matCellDef="let element"> {{element.specialTeamsTDs}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
