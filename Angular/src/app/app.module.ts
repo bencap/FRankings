@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { RouterModule, Routes } from '@angular/router';
+import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatTableModule } from '@angular/material/table';
@@ -32,6 +32,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatSortModule,
     HttpClientModule,
+    ActivatedRoute,
     RouterModule.forRoot(routes)
   ],
   providers: [],
