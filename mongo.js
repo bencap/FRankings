@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 */
 mongoose.Promise = global.Promise;
 
-const env = require('./environment');
+const env = process.env || require('./environment');
 
 // eslint-disable-next-line max-len
 const mongoUri = `mongodb://${env.accountName}:${env.key}@${env.accountName}.documents.azure.com:${env.port}/${env.databaseName}?ssl=true`;
